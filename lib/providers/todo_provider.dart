@@ -1,12 +1,24 @@
 import 'package:flutter/material.dart';
 
 class TodoProvider extends ChangeNotifier {
-  String _name = 'undefined michi 😼';
+  
+  String language = "English";
 
-  String get name => _name;
+  void changeLanguage(String newLanguage) {
+    if (language == newLanguage) {
+      return;
+    }
+    language = newLanguage;
+    notifyListeners();
+  }
 
-  set name (String newName) {
-    _name = newName;
+  String themeMode = "light";
+
+  void changeThemeMode(String newThemeMode) {
+    if (themeMode == newThemeMode) {
+      return;
+    }
+    themeMode = newThemeMode;
     notifyListeners();
   }
 
